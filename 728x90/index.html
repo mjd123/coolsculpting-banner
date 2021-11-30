@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="ad.size" content="width=728,height=90">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Allergan</title>
+
+    <script>
+        var clickTag = "https://www.google.com/";
+    </script>
+
+    <style>
+        @font-face {
+            font-family: AvenirNext;
+            src: url('assets/AvenirNext-Medium.ttf');
+        }
+
+        html {
+            max-width: 728px;
+            max-height: 90px;
+            width: 728px;
+            height: 90px;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: AvenirNext, Arial, Helvetica, sans-serif;
+            max-width: 728px;
+            max-height: 90px;
+            width: 728px;
+            height: 90px;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        main {
+            position: relative;
+            width: 728px;
+            height: 90px;
+
+            background-image: url('./assets/background.png');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-x: hidden;
+
+        }
+
+        p {
+            color: white;
+            width: 75%;
+            font-size: 16px;
+            margin-top: 0;
+            margin-left: 10px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 0;
+        }
+
+        button {
+            cursor: pointer;
+            border: 0;
+            color: white;
+            background-color: rgb(0, 169, 224);
+        }
+
+        .frame_1,
+        .frame_2,
+        .frame_3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            /* opacity: 0; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <img src="./assets/logo.png" alt="Logo">
+        <div class="frame_1" style=" position: absolute; top: 0; left: 0;">
+
+            <div style="display: flex; width: 75%;">
+                <img src="./assets/logo.png" alt="Logo" style="opacity: 0;">
+                <p>TAKE YOURSELF
+                    FURTHER ON YOUR
+                    FAT REDUCTION
+                    JOURNEY</p>
+            </div>
+
+        </div>
+        <div class="frame_2" style="position: absolute; top: 0; left: 0;">
+            <div style="display: flex; width: 75%;">
+                <img src="./assets/logo.png" alt="Logo" style="opacity: 0;">
+                <div class="content">
+                    <p style="text-transform: uppercase;">discover CoolSculpting<sup>®</sup> the
+                        non-invasive
+                        treatment</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="frame_3" style="position: absolute; top: 0; left: 0;">
+            <div class="logo_content" style="display: flex;">
+                <img src="./assets/logo.png" alt="Logo" style="opacity: 0;">
+                <img style=" width: 150px;
+                height: 26px;
+                margin-left: 10px;" src="./assets/coolsculpting.png" alt="Coolsculpting">
+
+
+            </div>
+
+            <p class="text" style="font-size: 12px; margin-right: auto;
+            width: 50%; margin-left: 40px;">The No1 fat freezing treatment
+                that’s proven to eliminate
+                stubborn fat*</p>
+
+            <div class="content" style="display: flex;
+            position: absolute;
+            right: 10px;
+            justify-content: flex-end;
+            flex-direction: column;">
+
+                <button
+                    style="font-size: 12px; border-radius: 25px; padding: 5px; margin-bottom: 10px; margin-top: 20px; "
+                    onclick="window.open(clickTag)">
+                    DISCOVER MORE
+                </button>
+                <p class="ref" style="font-size: 8px; width: 100%;">INT-CSC-2150113. March 2021</p>
+
+
+            </div>
+
+        </div>
+    </main>
+
+    <!--CDN FOR GREENSOCK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!--/CDN FOR GREENSOCK -->
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <!--/jquery-->
+    <script>
+        $(document).ready(function () {
+            // slide timeline
+            var tl = gsap.timeline();
+            tl.to(".frame_1", {
+                x: '-100%', opacity: 0, duration: 1
+            }, 2)
+            tl.fromTo(".frame_2", { x: '110%', opacity: 0 }, { duration: 1, x: '0', opacity: 1 }, 2)
+                .to(".frame_2", {
+                    x: '-100%', opacity: 0, duration: 1
+                }, 4)
+            tl.fromTo(".frame_3", { x: '110%', opacity: 0 }, { duration: 1, x: '0', opacity: 1 }, 4)
+            tl.fromTo(".logo_content", { x: '110%', opacity: 0 }, { duration: 1, x: '0', opacity: 1 }, 4)
+            tl.fromTo(".content .text", { x: '110%', opacity: 0 }, { duration: 1, x: '0', opacity: 1 }, 4.25)
+            tl.fromTo(".content button", { x: '110%', opacity: 0 }, { duration: 1, x: '0', opacity: 1 }, 4.5)
+            tl.fromTo(".content .ref", { x: '110%', opacity: 0 }, { duration: 1, x: '0', opacity: 1 }, 4.75)
+        });
+    </script>
+</body>
+
+</html>
